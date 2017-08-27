@@ -15,9 +15,7 @@ test:
   
 deployment:
   pre:
-    - bundle install:
-        pwd:
-          node
+    build_dir: node
   hub:
     branch: master ## do deployment on commit to the master branch only 
     commands:
