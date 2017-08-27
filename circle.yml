@@ -13,7 +13,7 @@ test:
     ## - docker run -e RAILS_ENV=test -it my-website rake test
 
 general:
-  build_dir: ECSTest/node
+  build_dir: node
   
 deployment:
   hub:
