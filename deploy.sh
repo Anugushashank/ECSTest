@@ -6,7 +6,7 @@ IMAGE_TAG=${CIRCLE_SHA1}
 TASK_FAMILY=ecstest
 
 # Create a new task definition for this build
-aws ecs register-task-definition  --cli-input-json file://task_definition.json
+aws ecs register-task-definition  --cli-input-json file://task_definition.json --region us-east-2
 
 # Update the service with the new task definition and desired count
 TASK_REVISION=`aws ecs describe-task-definition --task-definition ${TASK_FAMILY} | egrep "revision" | tr "/" " " | awk '{print $2}' | sed 's/"$//'`
