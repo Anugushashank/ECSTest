@@ -16,7 +16,8 @@ test:
 deployment:
   hub:
     branch: master ## do deployment on commit to the master branch only 
-    pwd: ./node
+    - Directory:
+        pwd: ./node
     commands:
-      - ls
-      - cd node && chmod +x node_deployment_check.sh && ./node_deployment_check.sh
+      pwd: ./node
+      - cd node && bash chmod +x node_deployment_check.sh && bash ./node_deployment_check.sh
