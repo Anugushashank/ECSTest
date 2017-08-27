@@ -15,11 +15,10 @@ test:
 deployment:
   hub:
     branch: master ## do deployment on commit to the master branch only 
-    pwd: node
     commands:
       - docker tag ecrtest 878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:$CIRCLE_SHA1
       - docker tag ecrtest 878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:latest
       - docker push 878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:$CIRCLE_SHA
       - docker push 878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:latest
       - ls
-      - bash node_deployment_check.sh
+      - cd ./node && bash node_deployment_check.sh
