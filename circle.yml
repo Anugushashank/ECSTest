@@ -14,8 +14,8 @@ test:
 
   
 deployment:
-  general:
-    build_dir: node
+  build_dir: node
+  pwd: node
   hub:
     branch: master ## do deployment on commit to the master branch only 
     commands:
