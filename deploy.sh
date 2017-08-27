@@ -9,7 +9,7 @@ TASK_FAMILY=ecstest
 aws ecs register-task-definition  --cli-input-json file://task-definition.json
 
 # Update the service with the new task definition and desired count
-TASK_REVISION=`aws ecs describe-task-definition --task-definition ${TASK_FAMILY} | egrep "revision" | tr "/" " " | awk '{print $2}' | sed 's/"$//'`
+TASK_REVISION=`aws ecs describe-task-definition --task_definition ${TASK_FAMILY} | egrep "revision" | tr "/" " " | awk '{print $2}' | sed 's/"$//'`
 DESIRED_COUNT=`aws ecs describe-services --cluster ${CLUSTER_NAME} --services ${SERVICE_NAME} | egrep "desiredCount" | head -1 | tr "/" " " | awk '{print $2}' | sed 's/,$//'`
 if [ ${DESIRED_COUNT} = "0" ]; then
     DESIRED_COUNT="1"
