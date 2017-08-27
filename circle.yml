@@ -14,10 +14,7 @@ test:
 
   
 deployment:
-  build_dir: node
-  pwd: node
   hub:
     branch: master ## do deployment on commit to the master branch only 
     commands:
-      - chmod +x node_deployment_check.sh
-      - ./node_deployment_check.sh
+      - cd node && chmod +x node_deployment_check.sh && ./node_deployment_check.sh
