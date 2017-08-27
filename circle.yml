@@ -24,4 +24,4 @@ deployment:
       - docker push 878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:$CIRCLE_SHA
       - docker push 878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:latest
       - ls
-      - bash node_deployment_check.sh
+      - bash ./node_deployment_check.sh
