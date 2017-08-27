@@ -14,10 +14,11 @@ test:
 
   
 deployment:
+  pre:
+    - bundle install:
+        pwd:
+          node
   hub:
     branch: master ## do deployment on commit to the master branch only 
-    - Directory:
-        pwd: ./node
     commands:
-      pwd: ./node
       - cd node && bash chmod +x node_deployment_check.sh && bash ./node_deployment_check.sh
