@@ -20,4 +20,4 @@ if [ ${DESIRED_COUNT} = "0" ]; then
     DESIRED_COUNT="1"
 fi
 
-aws ecs update-service --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_FAMILY}:${TASK_REVISION} --desired-count 3 --region us-east-2
+aws ecs update-service --cluster ${CLUSTER_NAME} --service ${SERVICE_NAME} --task-definition ${TASK_FAMILY}:${TASK_REVISION} --desired-count 4 --region us-east-2
