@@ -1,3 +1,7 @@
-FROM ubuntu
+FROM python
 
-CMD echo "I am Shashank"
+WORKDIR /app
+
+COPY . /app
+
+ENTRYPOINT ["python", "/app/server.py"]

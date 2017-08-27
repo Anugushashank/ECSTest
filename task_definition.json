@@ -1,12 +1,11 @@
 {
-     "family": "<TASK FAMILY>",
+     "family": "ecstest",
      "containerDefinitions": [
          {
-             "image": "878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:%IMAGE_TAG%",
-             "name": "<TASK NAME>",
+             "image": "878242495038.dkr.ecr.us-east-2.amazonaws.com/ecs_test:latest",
+             "name": "ecs_test2",
              "cpu": 384,
              "memory": 512,
-             "essential": true,
              "portMappings": [
                  {
                      "containerPort": 80,
@@ -15,5 +14,6 @@
                  }
              ]
          }
-     ]
+     ],
+     "networkMode":"host"
  }
