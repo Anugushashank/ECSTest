@@ -12,10 +12,10 @@ test:
     ## put your test command here
     ## - docker run -e RAILS_ENV=test -it my-website rake test
 
-general:
-  build_dir: node
   
 deployment:
+  general:
+    build_dir: node
   hub:
     branch: master ## do deployment on commit to the master branch only 
     commands:
