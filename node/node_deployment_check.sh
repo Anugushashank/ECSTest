@@ -5,7 +5,7 @@ set -e
 LATEST_COMMIT=$(git rev-parse HEAD)
 
 # latest commit where path/to/folder1 was changed
-FOLDER1_COMMIT=$(git log -1 --format=format:%H --full-diff node)
+FOLDER1_COMMIT=$(git log -1 --format=format:%H --full-diff .)
 
 if [ $FOLDER1_COMMIT = $LATEST_COMMIT ];
     then
